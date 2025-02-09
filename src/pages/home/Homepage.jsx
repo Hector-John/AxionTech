@@ -1,12 +1,14 @@
-import React from 'react'
+import React from "react";
+import HeroSection from "./Hero";
+import HomeServices from "./HomeServices";
 
 const Homepage = () => {
   return (
-    <div className='min-h-screen'>
-      Homepage
-
+    <div className="padded">
+      <HeroSection />
+      <HomeServices />
     </div>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;
