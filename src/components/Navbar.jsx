@@ -18,12 +18,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`padded fixed top-0 left-0 w-full z-100 grid grid-cols-3 items-center px-10 h-16 transition-all duration-300 shadow-sm backdrop-blur-md ${
+      className={`padded fixed top-0 left-0 w-full z-100 grid grid-cols-3 items-center px-10 h-18 transition-all duration-300 backdrop-blur-md ${
         isScrolled ? "bg-white/20" : "bg-transparent"
       }`}
     >
       <div className="logo text-2xl text-orange-600 font-bold">
-        Axion<span className="text-blue-600">Tech</span><span className="text-orange-600">.</span>
+        Axion<span className="text-blue-600">Tech</span>
+        <span className="text-orange-600">.</span>
       </div>
 
       <ul className="flex gap-10 justify-center font-semibold ">
@@ -31,7 +32,9 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `${isActive ? "text-blue-600" : "text-gray-700"} hover:text-blue-600`
+              `${
+                isActive ? "text-blue-600" : "text-gray-700"
+              } hover:text-blue-600`
             }
             end
           >
@@ -42,7 +45,9 @@ const Navbar = () => {
           <NavLink
             to="/portfolio"
             className={({ isActive }) =>
-              `${isActive ? "text-blue-600" : "text-gray-700"} hover:text-blue-600`
+              `${
+                isActive ? "text-blue-600" : "text-gray-700"
+              } hover:text-blue-600`
             }
           >
             Portfolio
@@ -52,7 +57,9 @@ const Navbar = () => {
           <NavLink
             to="/services"
             className={({ isActive }) =>
-              `${isActive ? "text-blue-600" : "text-gray-700"} hover:text-blue-600`
+              `${
+                isActive ? "text-blue-600" : "text-gray-700"
+              } hover:text-blue-600`
             }
           >
             Services
@@ -62,15 +69,15 @@ const Navbar = () => {
           <NavLink
             to="/blogs"
             className={({ isActive }) =>
-              `${isActive ? "text-blue-600" : "text-gray-700"} hover:text-blue-600`
+              `${
+                isActive ? "text-blue-600" : "text-gray-700"
+              } hover:text-blue-600`
             }
           >
             Blog
           </NavLink>
         </li>
-        <li>
-       
-        </li>
+        <li></li>
       </ul>
 
       <div className="flex justify-end">

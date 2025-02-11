@@ -1,17 +1,16 @@
 import React from "react";
 import Button from "../../components/Button";
-// import hero_designer from '../../assets/hero_designer.webp'
+import hero_design from '../../assets/hero_design.webp'
 
 const HeroSection = () => {
   return (
-    <div className="h-screen grid grid-cols-1 md:grid-cols-2 items-center ">
+    <div className="mt-[8rem] mb-18 grid grid-cols-1 md:grid-cols-2 items-center ">
       <div className="">
-        <h2 className="leading-12 mb-4 font-bold text-gray-700 sm:text-3xl md:text-4xl">
-          <span className="text-blue-600">Smart, </span>
+        <h2 className="leading-14 mb-4 font-bold text-gray-700 sm:text-3xl md:text-5xl">
+          <span className="">Smart, </span>
           <span className="text-orange-600">Scalable,</span> and
-          <span className="text-blue-600"> Future</span>-
-          <span className="text-orange-600">ready</span> solutions for
-          real-world challenges.
+          <span className="text-blue-600 "> Future</span>-
+          <span className="text-blue-600 ">ready</span> solutions.
         </h2>
 
         <p className="text-lg leading-8 font-medium text-gray-600">
@@ -27,9 +26,10 @@ const HeroSection = () => {
       </div>
 
       <div className="flex justify-center items-center">
-        {/* Insert image or illustration here */}
-        {/* <img src={hero_designer }alt="hero_image" /> */}
+        <img src={hero_design}alt="hero_image" />
       </div>
+
+      
     </div>
   );
 };
