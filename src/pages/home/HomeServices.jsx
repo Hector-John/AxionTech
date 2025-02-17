@@ -7,7 +7,7 @@ import {
   FaCreditCard, 
   FaPaintBrush, 
   FaBullhorn, 
-  FaArrowRight 
+  FaArrowRight
 } from "react-icons/fa";
 
 const services = [
@@ -45,7 +45,7 @@ const services = [
 
 const HomeServices = () => {
   return (
-    <div className="py-12 px-6">
+    <div className="py-12 px-6 padded">
       <h1 className="text-4xl tracking-tight font-bold text-center mb-10">
         Our <span className="text-blue-600">Services</span>
       </h1>

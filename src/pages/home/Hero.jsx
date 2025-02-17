@@ -4,7 +4,7 @@ import hero_design from '../../assets/hero_design.webp'
 
 const HeroSection = () => {
   return (
-    <div className="mt-[8rem] mb-18 grid grid-cols-1 md:grid-cols-2 items-center ">
+    <div className="mt-[8rem] mb-18 grid grid-cols-1 md:grid-cols-2 items-center padded ">
       <div className="">
         <h2 className="leading-14 mb-4 font-bold text-gray-700 sm:text-3xl md:text-5xl">
           <span className="">Smart, </span>
