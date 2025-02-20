@@ -13,6 +13,11 @@ import {
 import ServicesCta from "./ServicesCta";
 import OurProcess from "../../components/OurProcess";
 import TechStack from "../../components/TechStack";
+import Numbers from "../home/Numbers";
+import Button from "../../components/Button";
+import {
+  FaCheckCircle,
+} from "react-icons/fa";
 
 const services = [
   {
@@ -105,7 +110,10 @@ const Services = () => {
         <div className="relative flex flex-col mt-8 md:flex-row justify-between items-center w-full px-24">
           <h1 className="text-4xl font-semibold">Our Services</h1>
           <div className="text-gray-600 px-6 py-3 rounded-full shadow-md font-medium text-sm bg-gray-100">
-            Home / <span className="font-semibold text-black">Our Services</span>
+            Home /{" "}
+            <span className="font-semibold text-black" data-aos="fade-up">
+              Our Services
+            </span>
           </div>
         </div>
       </div>
@@ -128,12 +136,16 @@ const Services = () => {
           >
             {/* Icon & Title */}
             <div className="flex items-center gap-3 mb-4">
-              <div className={`${service.color} p-3 rounded-lg`}>{service.icon}</div>
+              <div className={`${service.color} p-3 rounded-lg`}>
+                {service.icon}
+              </div>
               <h2 className="text-xl font-semibold">{service.title}</h2>
             </div>
 
             {/* Description */}
-            <p className="text-gray-600 font-medium tracking-tight mb-4">{service.description}</p>
+            <p className="text-gray-600 font-medium tracking-tight mb-4">
+              {service.description}
+            </p>
 
             {/* Bullet Points */}
             <ul className="text-gray-700 font-medium tracking-snub space-y-2">
@@ -146,7 +158,10 @@ const Services = () => {
 
             {/* Call to Action */}
             <div className="mt-6">
-              <a href="#" className="text-blue-600 font-semibold hover:underline flex items-center gap-1">
+              <a
+                href="#"
+                className="text-blue-600 font-semibold hover:underline flex items-center gap-1"
+              >
                 Request Quote <span>→</span>
               </a>
             </div>
@@ -154,15 +169,50 @@ const Services = () => {
         ))}
       </div>
 
-      {/* Call to Action */}
-      <div className="">
-        <ServicesCta />
-      </div>
-      <div>
-<OurProcess/>
-      </div>
-      <div className="div">
-        <TechStack/>
+      <ServicesCta />
+      <OurProcess />
+      <TechStack />
+      <Numbers />
+
+      <div className="text-center py-20  ">
+        {/* Headline */}
+        <h2 className="text-4xl tracking-tight font-bold text-gray-900">
+          Let’s Turn Your Vision into Reality
+        </h2>
+        <p className="mt-4 text-lg font-medium text-gray-700">
+          Get expert solutions tailored to your business needs.
+        </p>
+
+        {/* Key Highlights */}
+        <div className="mt-6 space-y-3 text-gray-800">
+          <div className="flex items-center justify-center gap-2">
+            <FaCheckCircle className="text-blue-500 text-lg" />
+            <span>Custom-built, scalable solutions</span>
+          </div>
+          <div className="flex items-center justify-center gap-2">
+            <FaCheckCircle className="text-blue-500 text-lg" />
+            <span>Optimized for performance & user experience</span>
+          </div>
+          <div className="flex items-center justify-center gap-2">
+            <FaCheckCircle className="text-blue-500 text-lg" />
+            <span>Seamless collaboration & support</span>
+          </div>
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="flex gap-6 mt-12 justify-center">
+          <Button
+            text="Get a Quote"
+            to="/quote"
+            className="px-10 py-4 text-lg"
+          />
+          <Button
+            text="Let's Talk"
+            to="/contact"
+            className="px-10 py-4 text-lg"
+            variant="outline"
+          />
+        </div>
       </div>
     </>
   );

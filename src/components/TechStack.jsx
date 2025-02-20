@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Slider from "react-slick";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -9,7 +10,6 @@ import {
   FaFigma,
   FaJava,
   FaPython,
-  FaMobileAlt,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -22,6 +22,8 @@ import {
   SiAdobexd,
   SiReact,
 } from "react-icons/si";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const techStacks = [
   { name: "HTML5", icon: <FaHtml5 />, color: "text-orange-500" },
@@ -46,74 +48,55 @@ const techStacks = [
 const TechStack = () => {
   const [hoveredTech, setHoveredTech] = useState(null);
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 4 } },
+      { breakpoint: 768, settings: { slidesToShow: 3 } },
+      { breakpoint: 480, settings: { slidesToShow: 2 } },
+    ],
+  };
+
   return (
-    <div className="relative bg-gray-50 py-20">
-      {/* Section Title */}
+    <div className="relative overflow-hidden py-24">
       <div className="text-center mb-10">
         <p className="text-blue-600 font-semibold">Tech Stack</p>
-        <h2 className="text-4xl font-bold text-gray-800">
-          Technologies We Use
-        </h2>
+        <h2 className="text-4xl font-bold text-gray-800">Technologies We Use</h2>
         <p className="text-gray-600 mt-2">
           Powering our solutions with modern technologies.
         </p>
       </div>
 
-      {/* Fade Effect on Sides */}
-      <div className="absolute top-0 bottom-0 left-0 w-20 bg-gradient-to-r from-gray-50 via-transparent to-transparent pointer-events-none"></div>
-      <div className="absolute top-0 bottom-0 right-0 w-20 bg-gradient-to-l from-gray-50 via-transparent to-transparent pointer-events-none"></div>
-
-      {/* Infinite Marquee */}
-      <div className="overflow-hidden whitespace-nowrap">
-        <div
-          className="flex space-x-16 animate-marquee hover:pause-marquee"
-          onMouseEnter={(e) => e.currentTarget.classList.add("paused")}
-          onMouseLeave={(e) => e.currentTarget.classList.remove("paused")}
-        >
-          {[...techStacks, ...techStacks].map((tech, index) => (
+      <div className="px-8 py-6 lg:px-20">
+        <Slider {...settings}>
+          {techStacks.map((tech, index) => (
             <div
               key={index}
-              className="relative flex flex-col items-center justify-center w-24 cursor-pointer"
+              className="flex flex-col items-center justify-center "
               onMouseEnter={() => setHoveredTech(tech.name)}
               onMouseLeave={() => setHoveredTech(null)}
             >
-              {/* Icon */}
-              <span
-                className={`text-6xl text-gray-400 transition-colors duration-300 ${
+              <div className="flex flex-col items-center ">
+
+              <div
+                className={`text-6xl text-gray-400 transition-colors duration-300 cursor-pointer ${
                   hoveredTech === tech.name ? tech.color : ""
                 }`}
               >
                 {tech.icon}
-              </span>
-
-              {/* Tooltip */}
-              {hoveredTech === tech.name && (
-                <div className="absolute left-1/2 -translate-x-1/2 -top-14 bg-black text-white text-sm font-semibold py-2 px-3 rounded-md shadow-md whitespace-nowrap">
-                  {tech.name}
-                </div>
-              )}
+              </div>
+              <p className="mt-2 text-center text-gray-700 font-medium">{tech.name}</p>
+              </div>
             </div>
           ))}
-        </div>
+        </Slider>
       </div>
-
-      {/* Tailwind Animation */}
-      <style>
-        {`
-          @keyframes marquee {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-          }
-          .animate-marquee {
-            display: flex;
-            animation: marquee 20s linear infinite;
-            will-change: transform;
-          }
-          .paused {
-            animation-play-state: paused;
-          }
-        `}
-      </style>
     </div>
   );
 };
