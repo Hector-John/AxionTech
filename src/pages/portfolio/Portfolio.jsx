@@ -33,7 +33,7 @@ const Portfolio = () => {
     { id: 2, title: "Scaling FinTech Apps", description: "Our role in building secure and scalable mobile banking solutions.", img: images.caseStudy2, link: "/case-studies/2" },
   ];
 
-  const clients = [images.client1, images.client2, images.client3, images.client4, images.client5];
+  const clients = [images.profile2, images.profile1, images.profile3, images.profile4, images.profile6];
 
   return (
     <div className="text-gray-900">
@@ -53,7 +53,7 @@ const Portfolio = () => {
         {tabs.map((tab) => (
           <button 
             key={tab} 
-            className={`px-5 py-2 text-lg rounded-lg ${activeTab === tab ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-700"}`}
+            className={`px-5 py-2 text-lg rounded-full ${activeTab === tab ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300 "}`}
             onClick={() => setActiveTab(tab)}
           >
             {tab}
