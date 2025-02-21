@@ -77,7 +77,7 @@ const OurProcess = () => {
   return (
     <div className="py-20">
       <div className="text-center mb-12">
-        <p className="text-blue-600 font-semibold">Our Process</p>
+        <p className="text-blue-600 font-semibold pb-2">Our Process</p>
         <h2 className="text-4xl font-bold text-gray-800">How We Work</h2>
         <p className="text-gray-600 mt-2">
           A step-by-step approach to delivering excellence.
