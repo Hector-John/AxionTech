@@ -24,9 +24,15 @@ import wellness from "./wellness.png";
 import hero_design from "./hero_design.webp";
 import phone_hero from "./phone_hero.webp";
 import east from "./east.png";
+import fintech from "./fintech.png";
+import ecommerce from "./ecommerce.png";
+import choose from "./choose.png";
 
 const images = {
+  choose,
   east,
+  fintech,
+  ecommerce,
   phone_hero,
   hero_design,
   servicesCta,

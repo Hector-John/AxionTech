@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
+import images from "../../assets/images";
 
 const WhyChooseUs = () => {
   const features = [
@@ -51,10 +52,11 @@ const WhyChooseUs = () => {
       <div className="container mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left Section - Image Placeholder */}
         <div className="md:w-1/2 relative">
-          <div className="h-96 bg-white rounded-2xl flex items-center justify-center text-sm border border-gray-300 shadow-lg">
-            Placeholder for an image showcasing modern technology and
-            innovation.
-          </div>
+          <img
+            src={images.choose}
+            className="h-96 bg-white rounded-2xl flex items-center justify-center text-sm border border-gray-300 shadow-lg"
+          />
+
           <motion.div
             className="absolute bottom-4 left-4 bg-white text-blue-600 font-bold py-2 px-6 rounded-lg shadow-lg text-xl"
             initial={{ opacity: 0, scale: 0.8 }}

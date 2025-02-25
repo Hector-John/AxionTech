@@ -7,10 +7,20 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
+
 const Portfolio = () => {
   useEffect(() => {
     AOS.init({ duration: 800, easing: "ease-in-out", once: true });
   }, []);
+
+  const getRandomDate = () => {
+    const start = new Date(2023, 3, 1); 
+    const end = new Date(); 
+    const randomTime = start.getTime() + Math.random() * (end.getTime() - start.getTime());
+    const randomDate = new Date(randomTime);
+  
+    return randomDate.toISOString().split("T")[0]; 
+  };
 
   const [activeTab, setActiveTab] = useState("All");
   const [visibleProjects, setVisibleProjects] = useState(6);
@@ -110,7 +120,7 @@ const Portfolio = () => {
       id: 1,
       title: "Revolutionizing E-Commerce",
       description: "How we helped an online store scale and improve UX.",
-      img: images.caseStudy1,
+      img: images.ecommerce,
       link: "/case-studies/1",
     },
     {
@@ -118,7 +128,7 @@ const Portfolio = () => {
       title: "Scaling FinTech Apps",
       description:
         "Our role in building secure and scalable mobile banking solutions.",
-      img: images.caseStudy2,
+      img: images.fintech,
       link: "/case-studies/2",
     },
   ];
@@ -223,28 +233,44 @@ const Portfolio = () => {
           {caseStudies.map((caseStudy) => (
             <div
               key={caseStudy.id}
-              className="flex items-center gap-6 bg-white shadow-lg p-6 rounded-xl transition-transform transform hover:scale-105"
               data-aos="fade-up"
             >
-              <img
-                src={caseStudy.img}
-                alt={caseStudy.title}
-                className="w-1/3 rounded-lg"
-              />
-              <div>
-                <h3 className="text-xl font-semibold">{caseStudy.title}</h3>
-                <p className="text-gray-600 mt-2">{caseStudy.description}</p>
-                <Button
-                  text="Read More"
-                  to={caseStudy.link}
-                  className="mt-3 text-blue-600"
-                  variant="link"
-                />
-              </div>
+         <article className="relative overflow-hidden rounded-lg shadow-sm transition hover:shadow-lg">
+  <img
+    src={caseStudy.img}
+    alt={caseStudy.title}
+    loading="lazy"
+   class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-95"
+  />
+
+  <div className="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-32 sm:pt-48 lg:pt-64">
+    <div className="p-4 sm:p-6">
+     <time dateTime={getRandomDate()} className="block text-xs text-white/90 mb-2">
+  {getRandomDate()}
+</time>
+
+      <h3 className="text-xl text-white font-semibold">{caseStudy.title}</h3>
+      <p className="text-white mt-2">{caseStudy.description}</p>
+      <Button text="Read More " to={caseStudy.link} className="py-2.5 px-3 mt-4 " />
+
+    </div>
+  </div>
+</article>
+
+
+
             </div>
+
+
+
+
           ))}
         </div>
       </section>
+
+
+
+
 
       {/* CLIENT LOGO CAROUSEL */}
       <section className="py-16 px-6 md:px-16">
