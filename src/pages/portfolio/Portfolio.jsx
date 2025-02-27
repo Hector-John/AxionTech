@@ -144,7 +144,7 @@ const Portfolio = () => {
   return (
     <div className=" ">
       {/* HEADER  */}
-      <div className="relative w-full h-[45vh] flex flex-col justify-center items-center text-gray-700">
+      <div className="relative w-full lg:h-[45vh] h-[40vh] flex flex-col justify-center items-center text-gray-700 text-center lg:text-normal  ">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${images.bgimage})` }}
@@ -161,7 +161,7 @@ const Portfolio = () => {
       </div>
 
       {/* TABS */}
-      <div className="flex justify-center space-x-4 py-8  ">
+      <div className=" flex justify-center space-x-4 py-8  ">
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -179,7 +179,7 @@ const Portfolio = () => {
 
       {/* PROJECTS GRID */}
       <section className="px-6 md:px-16 py-12">
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-10">
           {filteredProjects.slice(0, visibleProjects).map((project) => (
             <div
               key={project.id}
@@ -223,13 +223,13 @@ const Portfolio = () => {
           </div>
         )}
       </section>
-
+ 
       {/* CASE STUDIES */}
       <section className="px-6 md:px-16 py-16 bg-gray-100">
         <h2 className="text-4xl font-bold text-center" data-aos="fade-up">
           Case Studies
         </h2>
-        <div className="mt-12 grid md:grid-cols-2 gap-10">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
           {caseStudies.map((caseStudy) => (
             <div
               key={caseStudy.id}

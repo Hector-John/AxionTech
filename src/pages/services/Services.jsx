@@ -102,16 +102,15 @@ const Services = () => {
   return (
     <>
       {/* Header */}
-      <div className="relative w-full h-[45vh] flex flex-col justify-center items-center text-gray-700">
+      <div className="relative w-full lg:h-[45vh] h-[40vh] flex flex-col text-center lg:text-start justify-center items-center text-gray-700">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${images.bgimage})` }}
         ></div>
         <div className="relative flex flex-col mt-8 md:flex-row justify-between items-center w-full px-24">
           <h1 className="text-4xl font-semibold">Our Services</h1>
-          <div className="text-gray-600 px-6 py-3 rounded-full shadow-md font-medium text-sm bg-gray-100">
-            Home /{" "}
-            <span className="font-semibold text-black" data-aos="fade-up">
+          <div className="text-gray-600 px-6 py-3 hidden md:flex rounded-full shadow-md font-medium text-sm bg-gray-100">
+            Home / <span className="pl-1 font-semibold text-black" data-aos="fade-up">
               Our Services
             </span>
           </div>
@@ -126,7 +125,7 @@ const Services = () => {
         </h2>
       </div>
 
-      <div className="mb-32 padded grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="mb-32 padded grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {services.map((service, index) => (
           <div
             key={index}
@@ -174,8 +173,7 @@ const Services = () => {
       <TechStack />
       <Numbers />
 
-      <div className="text-center py-20  ">
-        {/* Headline */}
+      <div className="lg:text-center py-12 lg:py-18 padded  ">
         <h2 className="text-4xl tracking-tight font-bold text-gray-900">
           Let’s Turn Your Vision into Reality
         </h2>
@@ -183,23 +181,21 @@ const Services = () => {
           Get expert solutions tailored to your business needs.
         </p>
 
-        {/* Key Highlights */}
-        <div className="mt-6 space-y-3 text-gray-800">
-          <div className="flex items-center justify-center gap-2">
+        <div className="mt-6 text-start space-y-3 text-gray-800">
+          <div className="flex items-center lg:justify-center gap-2">
             <FaCheckCircle className="text-blue-500 text-lg" />
             <span>Custom-built, scalable solutions</span>
           </div>
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center lg:justify-center gap-2">
             <FaCheckCircle className="text-blue-500 text-lg" />
             <span>Optimized for performance & user experience</span>
           </div>
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center lg:justify-center gap-2">
             <FaCheckCircle className="text-blue-500 text-lg" />
             <span>Seamless collaboration & support</span>
           </div>
         </div>
 
-        {/* CTA Buttons */}
         <div className="flex gap-6 mt-12 justify-center">
           <Button
             text="Get a Quote"

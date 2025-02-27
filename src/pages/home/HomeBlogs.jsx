@@ -38,7 +38,7 @@ const HomeBlogs = () => {
   ];
 
   return (
-    <div className=" padded">
+    <div className=" padded my-[6rem] ">
       {/* Section Heading */}
       <p className="text-blue-600 font-semibold text-center">Latest Post</p>
       <h2 className="text-3xl text-center font-bold mt-2 mb-10 text-gray-700 tracking-tight leading-tight">
@@ -46,7 +46,7 @@ const HomeBlogs = () => {
       </h2>
 
       {/* Blog Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-4  lg:gap-6   ">
         {blogPosts.map((post, index) => (
           <div
             key={index}

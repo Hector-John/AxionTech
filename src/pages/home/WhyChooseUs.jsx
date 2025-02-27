@@ -37,7 +37,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="relative py-16 text-gray-700 flex items-center justify-center overflow-hidden">
+    <section className="padded relative py-16 text-gray-700 flex items-center justify-center  ">
       {/* Background SVG (Covers Whole Section) */}
       <div className="absolute top-0 left-0 w-full ">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -49,9 +49,9 @@ const WhyChooseUs = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto flex flex-col md:flex-row items-center gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
         {/* Left Section - Image Placeholder */}
-        <div className="md:w-1/2 relative">
+        <div className="relative flex justify-center items-center ">
           <img
             src={images.choose}
             className="h-96 bg-white rounded-2xl flex items-center justify-center text-sm border border-gray-300 shadow-lg"
@@ -68,7 +68,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Right Section - Features */}
-        <div className="md:w-1/2">
+        <div className="md:w-full">
           <motion.h2
             className="text-4xl font-bold mb-6 tracking-tight text-blue-600"
             initial={{ opacity: 0, y: -20 }}

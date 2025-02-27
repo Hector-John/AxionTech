@@ -109,7 +109,7 @@ const Blogs = () => {
   return (
     <div className="bg-gradient-to-b from-blue-50 to-transparent">
       {/* Header Section */}
-      <div className="relative w-full h-[45vh] flex flex-col justify-center items-center text-gray-700">
+      <div className="relative w-full lg:h-[45vh] h-[40vh] flex flex-col justify-center items-center text-gray-700">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${images.bgimage})` }}
@@ -125,129 +125,123 @@ const Blogs = () => {
         </div>
       </div>
 
-      <div className="flex padded my-20 gap-6">
-        {/* Sidebar Categories */}
-        <aside className="w-1/4">
-          <div className="bg-white p-4 rounded-lg space-y-1 shadow">
-            <h2 className="text-xl font-semibold text-gray-800 my-4">
-              Categories
-            </h2>
+      <div className="flex flex-col lg:flex-row padded my-20 gap-6">
+  {/* Sidebar Categories */}
+  <aside className="w-full lg:w-1/4">
+    <div className="bg-white p-4 rounded-lg space-y-1 shadow">
+      <h2 className="text-xl font-semibold text-gray-800 my-4">Categories</h2>
 
-            <div className="my-4 flex items-center border border-gray-300 shadow-sm gap-2 rounded-lg px-3 py-2 focus-within:ring-1 focus-within:ring-blue-300 transition duration-300">
-              <IoIosSearch className="text-gray-500 w-5 h-5" />
-              <input
-                type="search"
-                name="search"
-                placeholder="Search for a blog..."
-                className="flex-1 bg-transparent outline-none text-gray-800 placeholder-gray-500"
-              />
-            </div>
-
-            <button
-              className={`w-full text-left px-4 py-2 rounded-lg ${
-                activeCategory === "All"
-                  ? "font-semibold text-blue-600"
-                  : "text-gray-500 font-medium  hover:bg-blue-50"
-              }`}
-              onClick={() => setActiveCategory("All")}
-            >
-              All
-            </button>
-            {categories.map((category, index) => (
-              <motion.button
-                key={category.name}
-                className={`w-full text-left px-4 py-2 rounded-lg ${
-                  activeCategory === category.name
-                    ? "text-blue-600 font-semibold"
-                    : "text-gray-500 font-medium hover:bg-blue-50"
-                }`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.3 }}
-                onClick={() => setActiveCategory(category.name)}
-              >
-                {category.icon} {category.name}
-              </motion.button>
-            ))}
-          </div>
-
-          {/* Newsletter */}
-          <div className="mt-6 p-4 bg-white rounded-lg shadow text-center">
-            <h3 className="text-lg font-semibold text-gray-800">
-              Subscribe to Our Newsletter
-            </h3>
-            <p className="text-sm text-gray-600">
-              Stay updated with our latest blogs
-            </p>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="mt-4 p-2 border rounded w-full text-gray-800 focus:ring-1 focus:ring-blue-300 outline-none"
-            />
-            <button className="mt-3 w-full px-4 py-2 bg-blue-500 font-semibold text-white rounded-lg hover:bg-blue-600 transition duration-300">
-              Subscribe
-            </button>
-          </div>
-        </aside>
-
-        {/* Blog List */}
-
-        <div className="flex-1">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredBlogs.slice(0, visibleBlogs).map((blog) => (
-              <motion.div
-                key={blog.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <article className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-xs">
-                  <img
-                    alt={blog.title}
-                    src={blog.image}
-                    className="h-56 w-full object-cover"
-                  />
-
-                  <div className="p-4 sm:p-6">
-                    <h3 className="text-lg font-medium text-gray-900">
-                      {blog.title}
-                    </h3>
-
-                    <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-                      {blog.description}
-                    </p>
-
-                    <a
-                      href="#"
-                      className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600"
-                    >
-                      Find out more
-                      <span
-                        aria-hidden="true"
-                        className="block transition-all group-hover:ms-0.5 rtl:rotate-180"
-                      >
-                        &rarr;
-                      </span>
-                    </a>
-                  </div>
-                </article>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* View More Button */}
-          {visibleBlogs < filteredBlogs.length && (
-            <div className="text-center mt-6">
-              <button
-                className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-500 transition duration-300"
-                onClick={() => setVisibleBlogs(visibleBlogs + 3)}
-              >
-                View More
-              </button>
-            </div>
-          )}
-        </div>
+      <div className="my-4 flex items-center border border-gray-300 shadow-sm gap-2 rounded-lg px-3 py-2 focus-within:ring-1 focus-within:ring-blue-300 transition duration-300">
+        <IoIosSearch className="text-gray-500 w-5 h-5" />
+        <input
+          type="search"
+          name="search"
+          placeholder="Search for a blog..."
+          className="flex-1 bg-transparent outline-none text-gray-800 placeholder-gray-500 "
+        />
       </div>
+
+      <button
+        className={`w-full text-left px-4 py-2 rounded-lg ${
+          activeCategory === "All"
+            ? "font-semibold text-blue-600"
+            : "text-gray-500 font-medium  hover:bg-blue-50"
+        }`}
+        onClick={() => setActiveCategory("All")}
+      >
+        All
+      </button>
+      {categories.map((category, index) => (
+        <motion.button
+          key={category.name}
+          className={`w-full text-left px-4 py-2 rounded-lg ${
+            activeCategory === category.name
+              ? "text-blue-600 font-semibold"
+              : "text-gray-500 font-medium hover:bg-blue-50"
+          }`}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.3 }}
+          onClick={() => setActiveCategory(category.name)}
+        >
+          {category.icon} {category.name}
+        </motion.button>
+      ))}
+    </div>
+
+    {/* Newsletter */}
+    <div className="mt-6 p-4 bg-white rounded-lg shadow text-center">
+      <h3 className="text-lg font-semibold text-gray-800">
+        Subscribe to Our Newsletter
+      </h3>
+      <p className="text-sm text-gray-600">Stay updated with our latest blogs</p>
+      <input
+        type="email"
+        placeholder="Enter your email"
+        className="mt-4 p-2 border rounded w-full text-gray-800 focus:ring-1 focus:ring-blue-300 outline-none"
+      />
+      <button className="mt-3 w-full px-4 py-2 bg-blue-500 font-semibold text-white rounded-lg hover:bg-blue-600 transition duration-300">
+        Subscribe
+      </button>
+    </div>
+  </aside>
+
+  {/* Blog List */}
+  <div className="flex-1">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {filteredBlogs.slice(0, visibleBlogs).map((blog) => (
+        <motion.div
+          key={blog.id}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <article className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-xs">
+            <img
+              alt={blog.title}
+              src={blog.image}
+              className="h-56 w-full object-cover"
+            />
+
+            <div className="p-4 sm:p-6">
+              <h3 className="text-lg font-medium text-gray-900">{blog.title}</h3>
+
+              <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+                {blog.description}
+              </p>
+
+              <a
+                href="#"
+                className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600"
+              >
+                Find out more
+                <span
+                  aria-hidden="true"
+                  className="block transition-all group-hover:ms-0.5 rtl:rotate-180"
+                >
+                  &rarr;
+                </span>
+              </a>
+            </div>
+          </article>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* View More Button */}
+    {visibleBlogs < filteredBlogs.length && (
+      <div className="text-center mt-6">
+        <button
+          className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-500 transition duration-300"
+          onClick={() => setVisibleBlogs(visibleBlogs + 3)}
+        >
+          View More
+        </button>
+      </div>
+    )}
+  </div>
+</div>
+
     </div>
   );
 };

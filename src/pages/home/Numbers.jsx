@@ -3,7 +3,7 @@ import CountUp from "react-countup";
 
 const Numbers = () => {
   return (
-    <div className=" padded h-[30vh]  ">
+    <div className=" padded my-[6rem]  ">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         {/* Clients Satisfied */}
         <div className="bg-white p-6 rounded-lg shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg">

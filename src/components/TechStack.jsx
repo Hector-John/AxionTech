@@ -56,15 +56,16 @@ const TechStack = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    arrows: false,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 4 } },
-      { breakpoint: 768, settings: { slidesToShow: 3 } },
-      { breakpoint: 480, settings: { slidesToShow: 2 } },
+      { breakpoint: 1024, settings: { slidesToShow: 7 } },
+      { breakpoint: 768, settings: { slidesToShow: 4 } },
+      { breakpoint: 480, settings: { slidesToShow: 3 } },
     ],
   };
 
   return (
-    <div className="relative overflow-hidden py-24">
+    <div className="relative overflow-hidden py-10 lg:py-16">
       <div className="text-center mb-10">
         <p className="text-blue-600 font-semibold">Tech Stack</p>
         <h2 className="text-4xl font-bold text-gray-800">Technologies We Use</h2>

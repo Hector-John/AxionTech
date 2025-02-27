@@ -39,11 +39,11 @@ const testimonials = [
 
 const Testimonials = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true }); // Initialize AOS
+    AOS.init({ duration: 1000, once: true }); 
   }, []);
 
   return (
-    <div className="padded px-8 h-screen flex flex-col justify-center">
+    <div className="padded px-8 my-12 flex flex-col justify-center">
       <div>
         <p className="text-blue-600 font-semibold">Our Customer Testimonials</p>
         <h2 className="text-3xl font-bold mt-2 mb-10 text-gray-700 tracking-tight leading-tight">
@@ -51,12 +51,12 @@ const Testimonials = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-4 lg:gap-6  ">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
             data-aos="fade-up"
-            data-aos-delay={index * 200} 
+            data-aos-delay={index * 200}
             className="bg-white rounded-2xl shadow-lg p-6 text-center flex-1"
           >
             <div className="flex gap-4 items-center justify-center">

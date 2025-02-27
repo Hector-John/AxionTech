@@ -5,7 +5,7 @@ import images from "../../assets/images";
 const BriefAbout = () => {
   return (
     <section className="padded bg-gray-50 py-16  ">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Image Section */}
         <motion.div
           className="relative w-full h-72 md:h-[400px] rounded-lg overflow-hidden"
@@ -24,7 +24,7 @@ const BriefAbout = () => {
         {/* Text Content */}
         <motion.div
           className="text-gray-800"
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}

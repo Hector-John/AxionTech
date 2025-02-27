@@ -5,7 +5,7 @@ import Form from "./Form";
 const Cta = () => {
   return (
     <div className="padded my-12">
-      <div className="grid md:grid-cols-2 gap-8 bg-white p-16 h-[90vh] rounded-lg shadow-md">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-8 bg-white lg:p-16 p-6 md:p-6  rounded-lg shadow-md">
         {/* Left Section - Contact Details */}
         <div className="flex flex-col justify-center">
           <p className="text-blue-600 font-semibold uppercase">Get in Touch</p>
@@ -56,7 +56,7 @@ const Cta = () => {
           </div>
         </div>
 
-        <div className='' >
+        <div className="">
           <Form />
         </div>
       </div>
